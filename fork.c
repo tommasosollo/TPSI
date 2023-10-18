@@ -28,7 +28,7 @@ int main()
                         usleep(.3 * 1000000);
                         printf("\nluce verde spenta");
                     }
-                    continue;
+                    break;
                 case 'g':
                     for(int i = 0; i<10; i++)
                     {
@@ -37,7 +37,7 @@ int main()
                         usleep(.7 * 1000000);
                         printf("\nluce giallo spenta");
                     }
-                    continue;
+                    break;
                 case 'r':
                     for(int i = 0; i<10; i++)
                     {
@@ -46,11 +46,10 @@ int main()
                         usleep(1.2 * 1000000);
                         printf("\nluce rosso spenta");
                     }
-                    continue;
+                    break;
                 
                 default: break;
             }
-            break;
         }
     }
     
