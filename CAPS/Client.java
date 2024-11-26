@@ -21,16 +21,25 @@ public class Client {
 			
 			Thread receiverThread = new Thread(new Runnable() {
 				public void run() {
+					
+					String message = new String();
+					
 					while(true) {
+						
 						try {
+							
 							byte[] buffer = new byte[1024];
+							
 							DatagramPacket packet = new DatagramPacket(buffer , buffer.length, InetAddress.getByName(MULTICAST_IP), MULTICAST_PORT);
 							
 							socket.receive(packet);
 							
 							String msg = new String(packet.getData(), 0, packet.getLength());
 							
-							System.out.println(msg);
+							
+							if(!message.equals(msg)) System.out.println(msg);
+							
+							message = msg;
 							
 							if(msg.equals("EXIT")) break;
 							
